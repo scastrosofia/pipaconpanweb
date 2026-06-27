@@ -185,16 +185,16 @@
   <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
 
   <div class="video-grid">
-    <video autoplay muted loop playsinline preload="auto">
+    <video autoplay muted loop playsinline preload="auto" onclick="openVideoPopup(this.currentSrc || this.querySelector('source').src)">
       <source src="videos en vivo/IMG_1082.MOV" type="video/mp4">
     </video>
-    <video autoplay muted loop playsinline preload="auto">
+    <video autoplay muted loop playsinline preload="auto" onclick="openVideoPopup(this.currentSrc || this.querySelector('source').src)">
       <source src="videos en vivo/IMG_1363.MOV" type="video/mp4">
     </video>
-    <video autoplay muted loop playsinline preload="auto">
+    <video autoplay muted loop playsinline preload="auto" onclick="openVideoPopup(this.currentSrc || this.querySelector('source').src)">
       <source src="videos en vivo/IMG_1066.MOV" type="video/mp4">
     </video>
-    <video autoplay muted loop playsinline preload="auto">
+    <video autoplay muted loop playsinline preload="auto" onclick="openVideoPopup(this.currentSrc || this.querySelector('source').src)">
       <source src="videos en vivo/IMG_1292.MP4" type="video/mp4">
     </video>
   </div>
@@ -355,6 +355,46 @@
       });
     });
   })();
+  </script>
+
+  <!-- VIDEO POPUP (mobile only) -->
+  <div id="video-popup" style="display:none; position:fixed; top:0; left:0;
+       width:100%; height:100%; background:rgba(0,0,0,0.95);
+       z-index:99999; align-items:center; justify-content:center;
+       flex-direction:column;">
+    <video id="popup-video" controls autoplay playsinline
+           style="max-width:95vw; max-height:85vh; object-fit:contain;
+                  border:2px solid #E3007B;">
+    </video>
+    <button onclick="closeVideoPopup()"
+            style="margin-top:16px; background:none; border:2px solid #E3007B;
+                   color:#E3007B; font-family:'Comic Sans MS',cursive;
+                   font-size:1rem; padding:8px 20px; cursor:pointer;">
+      cerrar
+    </button>
+  </div>
+
+  <script>
+  function openVideoPopup(src) {
+    if (window.innerWidth > 768) return;
+    var popup = document.getElementById('video-popup');
+    var pv = document.getElementById('popup-video');
+    pv.src = src;
+    popup.style.display = 'flex';
+    pv.play().catch(function(){});
+  }
+
+  function closeVideoPopup() {
+    var popup = document.getElementById('video-popup');
+    var pv = document.getElementById('popup-video');
+    pv.pause();
+    pv.src = '';
+    popup.style.display = 'none';
+  }
+
+  document.getElementById('video-popup').addEventListener('click', function(e) {
+    if (e.target === this) closeVideoPopup();
+  });
   </script>
 
 </body>
