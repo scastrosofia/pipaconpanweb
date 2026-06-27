@@ -179,30 +179,31 @@
   <div class="player-layout">
     <div class="main-player">
       <iframe id="main-player" src="https://www.youtube.com/embed/R7kpraEfV44?autoplay=0&amp;rel=0" allowfullscreen></iframe>
+      <div id="now-playing" style="color:#E3007B; font-family:'Comic Sans MS',cursive; font-size:1.1rem; margin-top:12px; text-shadow:0 0 8px #E3007B;">Pop-up intro</div>
     </div>
 
     <div class="sidebar" id="playlist">
       <h3>✦ PLAYLIST ✦</h3>
 
-      <div class="sidebar-item active" onclick="loadVideo('R7kpraEfV44', this)">
-        <img src="https://img.youtube.com/vi/R7kpraEfV44/0.jpg" alt="Thumbnail 1">
-        <div class="info"><span class="num">#1</span><br>Tema 1</div>
+      <div class="thumb-item" onclick="loadVideo('R7kpraEfV44')">
+        <img src="https://img.youtube.com/vi/R7kpraEfV44/0.jpg" style="width:100%; border: 2px solid #E3007B;">
+        <p style="color:#E3007B; font-family:'Comic Sans MS',cursive; font-size:0.85rem; text-align:center; margin:4px 0 12px 0;">Pop-up intro</p>
       </div>
-      <div class="sidebar-item" onclick="loadVideo('98Eo1WjZyKk', this)">
-        <img src="https://img.youtube.com/vi/98Eo1WjZyKk/0.jpg" alt="Thumbnail 2">
-        <div class="info"><span class="num">#2</span><br>Tema 2</div>
+      <div class="thumb-item" onclick="loadVideo('98Eo1WjZyKk')">
+        <img src="https://img.youtube.com/vi/98Eo1WjZyKk/0.jpg" style="width:100%; border: 2px solid #E3007B;">
+        <p style="color:#E3007B; font-family:'Comic Sans MS',cursive; font-size:0.85rem; text-align:center; margin:4px 0 12px 0;">Soy una rana</p>
       </div>
-      <div class="sidebar-item" onclick="loadVideo('OyI1AkRu-Tw', this)">
-        <img src="https://img.youtube.com/vi/OyI1AkRu-Tw/0.jpg" alt="Thumbnail 3">
-        <div class="info"><span class="num">#3</span><br>Tema 3</div>
+      <div class="thumb-item" onclick="loadVideo('OyI1AkRu-Tw')">
+        <img src="https://img.youtube.com/vi/OyI1AkRu-Tw/0.jpg" style="width:100%; border: 2px solid #E3007B;">
+        <p style="color:#E3007B; font-family:'Comic Sans MS',cursive; font-size:0.85rem; text-align:center; margin:4px 0 12px 0;">Christian Dior</p>
       </div>
-      <div class="sidebar-item" onclick="loadVideo('RrhFUkZWp04', this)">
-        <img src="https://img.youtube.com/vi/RrhFUkZWp04/0.jpg" alt="Thumbnail 4">
-        <div class="info"><span class="num">#4</span><br>Tema 4</div>
+      <div class="thumb-item" onclick="loadVideo('RrhFUkZWp04')">
+        <img src="https://img.youtube.com/vi/RrhFUkZWp04/0.jpg" style="width:100%; border: 2px solid #E3007B;">
+        <p style="color:#E3007B; font-family:'Comic Sans MS',cursive; font-size:0.85rem; text-align:center; margin:4px 0 12px 0;">Cross en crocs</p>
       </div>
-      <div class="sidebar-item" onclick="loadVideo('0LoN6nNUZJE', this)">
-        <img src="https://img.youtube.com/vi/0LoN6nNUZJE/0.jpg" alt="Thumbnail 5">
-        <div class="info"><span class="num">#5</span><br>Tema 5</div>
+      <div class="thumb-item" onclick="loadVideo('0LoN6nNUZJE')">
+        <img src="https://img.youtube.com/vi/0LoN6nNUZJE/0.jpg" style="width:100%; border: 2px solid #E3007B;">
+        <p style="color:#E3007B; font-family:'Comic Sans MS',cursive; font-size:0.85rem; text-align:center; margin:4px 0 12px 0;">T1ck T0ck</p>
       </div>
     </div>
   </div>
@@ -219,14 +220,26 @@
        style="color:#E3007B; font-family:'Comic Sans MS',cursive; text-decoration:underline;">
       buscanos en Instagram
     </a>
+    <a href="mailto:pipaconpanmusic@gmail.com"
+       target="_blank"
+       style="color:#E3007B; font-family:'Comic Sans MS',cursive; 
+              text-decoration:underline; display:block; margin-top:8px;">
+      mandanos un mail
+    </a>
   </footer>
 
   <script>
-    function loadVideo(videoId, el) {
+    var trackTitles = {
+      'R7kpraEfV44': 'Pop-up intro',
+      '98Eo1WjZyKk': 'Soy una rana',
+      'OyI1AkRu-Tw': 'Christian Dior',
+      'RrhFUkZWp04': 'Cross en crocs',
+      '0LoN6nNUZJE': 'T1ck T0ck'
+    };
+
+    function loadVideo(videoId) {
       document.getElementById('main-player').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&amp;rel=0';
-      var items = document.querySelectorAll('.sidebar-item');
-      items.forEach(function(item) { item.classList.remove('active'); });
-      if (el) el.classList.add('active');
+      document.getElementById('now-playing').textContent = trackTitles[videoId] || 'Reproduciendo';
     }
   </script>
 
