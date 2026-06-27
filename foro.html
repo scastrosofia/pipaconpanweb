@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>pipaconpan — INFO</title>
+  <title>pipaconpan — FORO</title>
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     body {
@@ -61,23 +61,21 @@
       margin: 0;
       letter-spacing: 4px;
     }
-
-    .description {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 0 20px;
-      text-align: left;
-      font-size: 16px;
-      line-height: 1.8;
+    .page-title .sub {
+      font-size: 20px;
       color: #E3007B;
+      margin-top: 8px;
     }
-    .description p {
-      margin-bottom: 18px;
-    }
-
-
 
     * { cursor: url('elements/cursor.gif'), auto !important; }
+
+    #disqus_thread {
+      background: #000;
+      color: #E3007B;
+    }
+    :root {
+      --disqus-color: #E3007B;
+    }
 
     @media (max-width: 768px) {
       html, body, div, p, h1, h2, h3, h4, h5, h6,
@@ -106,44 +104,30 @@
 
   <div class="page-title">
     <img src="elements/music.gif" style="display:block; margin: 0 auto 8px auto; height:48px; width:auto;">
-    <h1>INFO</h1>
-  </div>
-
-  <a href="info/Rider pipaconpan.pdf" target="_blank" 
-     style="display:inline-flex; align-items:center; gap:10px;
-            border: 2px solid #E3007B; padding: 10px 20px;
-            color: #E3007B; font-family:'Comic Sans MS',cursive;
-            font-size:1rem; text-decoration:none; background:#000;
-            margin: 16px auto; display:flex; width:fit-content;">
-    <img src="elements/download.gif" style="height:28px; width:auto;">
-    RIDER TÉCNICO PARA DESCARGAR
-  </a>
-
-  <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
-
-  <div class="description">
-    <p>PIPACONPAN es el proyecto musical del colectivo artístico integrado por pipaconpan, beltruu y Sofía Castro.</p>
-    <p>En su performance multidisciplinaria conviven la hiperestimulación, la fascinación por la tecnología y la felicidad de compartir con amigos.</p>
-    <p>Su primer EP "El maravilloso mundo de Mel y Bel" propone un recorrido breve e intenso entre la fiesta, el humor y la sensación de estar atrapado en un mundo digital.</p>
-    <p>Pipaconpan recorre géneros que se fusionan: el Hyperpop convive con influencias del Funk Brasilero, Drum and Bass, UK Garage, Cumbia, Hip Hop y R&B.</p>
-    <p>En vivo, Pipaconpan presenta una performance intensa, energética y multidisciplinaria en la que sus integrantes hacen todo menos quedarse estáticos: bailan, juegan videojuegos, se filman unos a otros, scrollean en tiktok en circuito cerrado, exploran wikipedia y snapchat e interactúan con el público mientras soplan burbujas.</p>
-    <p>Pipaconpan interpreta la resistencia de esta manera:</p>
-    <p>Defendemos que también hay lugar en el arte y la tecnología para lo sincero y lo cursi. Queremos crear un espacio lúdico para dialogar con lo que nos pasa desde un lugar distinto a lo solemne.</p>
-    <p>Nuestra performance busca ser horizontal con el espectador, nos ponemos al lado suyo para invitarlo a bailar con nosotros.</p>
-    <p>Lo visual ocupa un lugar central en pipaconpan: no es un acompañamiento sino que parte de la misma lógica de exceso y fantasía. Colores saturados, brillos, memes, estética kitsch, collage y referencias a internet se integran en un mundo onírico y extraño.</p>
+    <h1>FORO</h1>
+    <div class="sub">dejanos tus mensajitos</div>
   </div>
 
   <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
 
-  <div style="display:flex; flex-direction:row; flex-wrap:nowrap;
-              justify-content:center; align-items:center;
-              gap:12px; max-width:100%; overflow-x:auto;
-              padding: 16px 0;">
-    <img src="info/Screenshot 2026-06-27 181954.png" alt="Screenshot 1" style="height:260px; width:auto; flex-shrink:0; border:2px solid #E3007B; object-fit:cover;">
-    <img src="info/Screenshot 2026-06-27 182006.png" alt="Screenshot 2" style="height:260px; width:auto; flex-shrink:0; border:2px solid #E3007B; object-fit:cover;">
-    <img src="info/Screenshot 2026-06-27 182517.png" alt="Screenshot 3" style="height:260px; width:auto; flex-shrink:0; border:2px solid #E3007B; object-fit:cover;">
-    <img src="info/Screenshot 2026-06-27 182615.png" alt="Screenshot 4" style="height:260px; width:auto; flex-shrink:0; border:2px solid #E3007B; object-fit:cover;">
-  </div>
+  <div id="disqus_thread" style="max-width:800px; margin:0 auto; padding:20px;"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://scastrosofia.github.io/pipaconpanweb/foro.html';
+      this.page.identifier = 'foro';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://pipaconpanweb.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>
+    <a href="https://disqus.com/?ref_noscript" style="color:#E3007B;">
+      activá JavaScript para ver los comentarios
+    </a>
+  </noscript>
 
   <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
 
