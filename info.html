@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PIPA CON PAN — INFO</title>
+  <title>pipaconpan — INFO</title>
   <style>
     body {
       background-color: #000000;
@@ -74,27 +74,8 @@
       margin-bottom: 18px;
     }
 
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px 40px;
-    }
-    .info-grid img {
-      width: 100%;
-      border: 2px solid #E3007B;
-      display: block;
-    }
 
-    .footer {
-      margin-top: 60px;
-      padding: 20px;
-      border-top: 2px ridge #E3007B;
-      font-size: 13px;
-      color: #E3007B;
-    }
+
     * { cursor: url('elements/cursor.gif'), auto !important; }
   </style>
 </head>
@@ -105,6 +86,7 @@
     <a href="fotos.html">FOTOS</a>
     <a href="visualizers.html">VISUALIZERS</a>
     <a href="info.html">INFO</a>
+    <a href="https://www.instagram.com/pipaconpan/?hl=en" target="_blank">INSTAGRAM</a>
   </div>
 
   <marquee scrollamount="5" behavior="scroll" direction="left">
@@ -114,8 +96,19 @@
   <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
 
   <div class="page-title">
+    <img src="elements/music.gif" style="display:block; margin: 0 auto 8px auto; height:48px; width:auto;">
     <h1>INFO</h1>
   </div>
+
+  <a href="info/rider_tecnico.pdf" download 
+     style="display:inline-flex; align-items:center; gap:10px;
+            border: 2px solid #E3007B; padding: 10px 20px;
+            color: #E3007B; font-family:'Comic Sans MS',cursive;
+            font-size:1rem; text-decoration:none; background:#000;
+            margin: 16px auto; display:flex; width:fit-content;">
+    <img src="elements/download.gif" style="height:28px; width:auto;">
+    RIDER TÉCNICO PARA DESCARGAR
+  </a>
 
   <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
 
@@ -133,18 +126,29 @@
 
   <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
 
-  <div class="info-grid">
-    <img src="info/Screenshot 2026-06-27 181954.png" alt="Screenshot 1">
-    <img src="info/Screenshot 2026-06-27 182006.png" alt="Screenshot 2">
-    <img src="info/Screenshot 2026-06-27 182517.png" alt="Screenshot 3">
-    <img src="info/Screenshot 2026-06-27 182615.png" alt="Screenshot 4">
+  <div style="display:flex; flex-direction:row; flex-wrap:nowrap;
+              justify-content:center; align-items:center;
+              gap:12px; max-width:100%; overflow-x:auto;
+              padding: 16px 0;">
+    <img src="info/Screenshot 2026-06-27 181954.png" alt="Screenshot 1" style="height:260px; width:auto; flex-shrink:0; border:2px solid #E3007B; object-fit:cover;">
+    <img src="info/Screenshot 2026-06-27 182006.png" alt="Screenshot 2" style="height:260px; width:auto; flex-shrink:0; border:2px solid #E3007B; object-fit:cover;">
+    <img src="info/Screenshot 2026-06-27 182517.png" alt="Screenshot 3" style="height:260px; width:auto; flex-shrink:0; border:2px solid #E3007B; object-fit:cover;">
+    <img src="info/Screenshot 2026-06-27 182615.png" alt="Screenshot 4" style="height:260px; width:auto; flex-shrink:0; border:2px solid #E3007B; object-fit:cover;">
   </div>
 
   <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
 
-  <div class="footer">
-    <p><img src="elements/footer.gif" style="height:24px; width:auto; vertical-align:middle;"> PIPA CON PAN © 2026 <img src="elements/footer.gif" style="height:24px; width:auto; vertical-align:middle;"></p>
-  </div>
+  <footer style="text-align:center; padding:16px; color:#E3007B; font-family:'Comic Sans MS',cursive;">
+    <img src="elements/footer.gif" style="height:24px;width:auto;vertical-align:middle;">
+    pipaconpan © 2026
+    <img src="elements/footer.gif" style="height:24px;width:auto;vertical-align:middle;">
+    <br><br>
+    <a href="https://www.instagram.com/pipaconpan/?hl=en" 
+       target="_blank" 
+       style="color:#E3007B; font-family:'Comic Sans MS',cursive; text-decoration:underline;">
+      buscanos en Instagram
+    </a>
+  </footer>
 
   <!-- CURSOR SPARKLES -->
   <script>
