@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIPA CON PAN — FOTOS</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #E3007B;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    a { color: #E3007B; text-decoration: none; }
+    a:hover { color: #FFF; text-shadow: 0 0 10px #E3007B; }
+
+    .nav {
+      margin: 20px auto 10px;
+      text-align: center;
+    }
+    .nav a {
+      display: inline-block;
+      border: 2px ridge #E3007B;
+      padding: 10px 24px;
+      margin: 0 4px;
+      background-color: #1a001a;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .nav a:hover { color: #FFF; }
+
+    marquee {
+      font-size: 16px;
+      color: #E3007B;
+      margin: 0;
+      border-top: 1px dashed #E3007B;
+      border-bottom: 1px dashed #E3007B;
+      padding: 8px 0;
+      width: 100%;
+    }
+
+    .star-divider {
+      text-align: center;
+      font-size: 18px;
+      color: #E3007B;
+      letter-spacing: 6px;
+      margin: 10px 0;
+    }
+
+    .page-title {
+      margin: 40px 20px 10px;
+    }
+    .page-title h1 {
+      font-size: 42px;
+      color: #E3007B;
+      text-shadow: 0 0 15px #E3007B;
+      margin: 0;
+      letter-spacing: 4px;
+    }
+    .page-title .sub {
+      font-size: 20px;
+      color: #E3007B;
+      margin-top: 8px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      padding: 20px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery a {
+      display: block;
+      border: 3px ridge #E3007B;
+      background-color: #0d000d;
+      padding: 6px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery a:hover {
+      transform: scale(1.04);
+      border-color: #FFF;
+    }
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.92);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 85vw;
+      max-height: 85vh;
+      border: 4px ridge #E3007B;
+      box-shadow: 0 0 60px #E3007B;
+    }
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: #E3007B;
+      cursor: pointer;
+      text-shadow: 0 0 10px #E3007B;
+      z-index: 10;
+    }
+    .lightbox .close:hover { color: #FFF; }
+    .lightbox .arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 4rem;
+      color: #E3007B;
+      cursor: pointer;
+      user-select: none;
+      background: none;
+      border: none;
+      padding: 0 24px;
+      z-index: 10;
+      transform: translateY(-50%);
+    }
+    .lightbox .arrow:hover { color: #FFF; }
+    .lightbox .arrow-left { left: 0; }
+    .lightbox .arrow-right { right: 0; }
+
+    .footer {
+      margin-top: 60px;
+      padding: 20px;
+      border-top: 2px ridge #E3007B;
+      font-size: 13px;
+      color: #E3007B;
+    }
+    * { cursor: url('elements/cursor.gif'), auto !important; }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <a href="index.html">VIDEOS</a>
+    <a href="fotos.html">FOTOS</a>
+    <a href="visualizers.html">VISUALIZERS</a>
+    <a href="info.html">INFO</a>
+  </div>
+
+  <marquee scrollamount="5" behavior="scroll" direction="left">
+    — LA BANDA MÁS POP DEL UNDER ♪ ♫ — LA BANDA MÁS POP DEL UNDER ♪ ♫ —
+  </marquee>
+
+  <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
+
+  <div class="page-title">
+    <h1>FOTOS DE NUESTRO SHOW EN VIVO</h1>
+    <div class="sub">La pasamos muy bien</div>
+  </div>
+
+  <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
+
+  <div class="gallery">
+    <a href="#" onclick="openLightbox(0); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06142.jpg" alt="DSC06142">
+    </a>
+    <a href="#" onclick="openLightbox(1); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06169.jpg" alt="DSC06169">
+    </a>
+    <a href="#" onclick="openLightbox(2); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06182.jpg" alt="DSC06182">
+    </a>
+    <a href="#" onclick="openLightbox(3); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06193.jpg" alt="DSC06193">
+    </a>
+    <a href="#" onclick="openLightbox(4); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06201.jpg" alt="DSC06201">
+    </a>
+    <a href="#" onclick="openLightbox(5); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06216.jpg" alt="DSC06216">
+    </a>
+    <a href="#" onclick="openLightbox(6); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06224-2.jpg" alt="DSC06224-2">
+    </a>
+    <a href="#" onclick="openLightbox(7); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06225.jpg" alt="DSC06225">
+    </a>
+    <a href="#" onclick="openLightbox(8); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06227.jpg" alt="DSC06227">
+    </a>
+    <a href="#" onclick="openLightbox(9); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06248.jpg" alt="DSC06248">
+    </a>
+    <a href="#" onclick="openLightbox(10); return false;">
+      <img src="fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06256.jpg" alt="DSC06256">
+    </a>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <button class="arrow arrow-left" onclick="prevPhoto(event)">&#8249;</button>
+    <img id="lightbox-img" src="" alt="Full size">
+    <button class="arrow arrow-right" onclick="nextPhoto(event)">&#8250;</button>
+  </div>
+
+  <div class="star-divider">✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
+
+  <div class="footer">
+    <p><img src="elements/footer.gif" style="height:24px; width:auto; vertical-align:middle;"> PIPA CON PAN © 2026 <img src="elements/footer.gif" style="height:24px; width:auto; vertical-align:middle;"></p>
+  </div>
+
+  <script>
+    var currentIndex = 0;
+    var photoPaths = [
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06142.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06169.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06182.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06193.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06201.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06216.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06224-2.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06225.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06227.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06248.jpg',
+      'fotos/POPENVIVO - PIPA FIX (@zivi0000)-3-001/POPENVIVO - PIPA FIX (@zivi0000)/DSC06256.jpg'
+    ];
+
+    function openLightbox(index) {
+      currentIndex = index;
+      document.getElementById('lightbox-img').src = photoPaths[currentIndex];
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function showPhoto(index) {
+      currentIndex = (index + photoPaths.length) % photoPaths.length;
+      document.getElementById('lightbox-img').src = photoPaths[currentIndex];
+    }
+    function nextPhoto(e) {
+      if (e) e.stopPropagation();
+      showPhoto(currentIndex + 1);
+    }
+    function prevPhoto(e) {
+      if (e) e.stopPropagation();
+      showPhoto(currentIndex - 1);
+    }
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextPhoto(e);
+      if (e.key === 'ArrowLeft') prevPhoto(e);
+    });
+  </script>
+
+  <!-- CURSOR SPARKLES -->
+  <script>
+  (function() {
+    const COLORS = ['#E3007B','#E3007B','#ffffff','#E3007B','#E3007B'];
+    let last = 0;
+    document.addEventListener('mousemove', e => {
+      const now = Date.now();
+      if (now - last < 35) return;
+      last = now;
+      const s = document.createElement('div');
+      const sz = Math.random() * 8 + 4;
+      s.style.cssText = 'position:fixed;border-radius:50%;pointer-events:none;z-index:2147483646;width:'+sz+'px;height:'+sz+'px;left:'+(e.clientX+(Math.random()-.5)*24)+'px;top:'+(e.clientY+(Math.random()-.5)*24)+'px;background:'+COLORS[Math.random()*COLORS.length|0]+';opacity:1;transition:opacity 0.6s,transform 0.6s';
+      document.body.appendChild(s);
+      requestAnimationFrame(() => { s.style.opacity='0'; s.style.transform='translateY(-'+(Math.random()*30+15)+'px) scale(0.3)'; });
+      setTimeout(() => s.remove(), 680);
+    });
+  })();
+  </script>
+
+</body>
+</html>
